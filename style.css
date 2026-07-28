@@ -8,13 +8,6 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
-    background: #03080f;
-    overflow-x: hidden;
-    font-family: sans-serif;
-    color: white;
-}
-
 main{
     position: relative;
     z-index: 1;
@@ -42,4 +35,39 @@ canvas{
     inset: 0;
     z-index: 0;
     pointer-events: none;
+}
+
+body{
+    margin:0;
+    overflow-x:hidden;
+    background: #0f1722;
+    color:white;
+    font-family:Inter,sans-serif;
+}
+
+.hero{
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.glow-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    
+    text-shadow:
+    0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px rgba(255, 255, 255, 0.8),
+    0 0 80px rgba(255, 255, 255, 0.6),
+    0 0 100px rgba(255, 255, 255, 0.4);
 }
