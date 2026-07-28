@@ -14,7 +14,7 @@ function resize(){
 }
 
 const particles = [];
-const particleCount = 500;
+const particleCount = 1000;
 
 for(let i = 0; i < particleCount; i++){
     const depth = Math.random();
@@ -23,11 +23,11 @@ for(let i = 0; i < particleCount; i++){
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
 
-        radius: Math.random() * 1.2 + 0.7,
+        radius: Math.random() * 0.8 + 0.2,
 
         depth: depth,
 
-        alpha: depth * 0.8,
+        alpha: depth * 0.35,
 
         vx: (Math.random() - 0.5) * 0.15,
         vy: (Math.random() - 0.5) * 0.15,
@@ -70,7 +70,7 @@ function render(){
 
         ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
 
-        ctx.shadowBlur = 15;
+        ctx.shadowBlur = 5;
         ctx.shadowColor = "rgba(255,255,255,0.25)";
 
         ctx.arc(screenX, screenY, p.radius, 0, Math.PI * 2);

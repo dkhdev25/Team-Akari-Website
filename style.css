@@ -9,7 +9,7 @@ html{
 }
 
 body{
-    background: #07111F;
+    background: #03080f;
     overflow-x: hidden;
     font-family: sans-serif;
     color: white;
@@ -17,7 +17,7 @@ body{
 
 main{
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero{
@@ -33,6 +33,13 @@ canvas{
     inset: 0;
     width: 100%;
     height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#bg {
+    position: fixed;
+    inset: 0;
     z-index: 0;
     pointer-events: none;
 }
