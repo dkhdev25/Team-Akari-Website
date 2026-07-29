@@ -122,3 +122,100 @@ body{
     border-color: #ffffff;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 0;
+    z-index: 100;
+    background: rgba(7, 11, 18, 0.88);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.nav-logo {
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    transition: all 0.25s ease;
+}
+
+.nav-links a svg {
+    width: 22px;
+    height: 22px;
+    stroke: rgba(255, 255, 255, 0.7);
+    transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a:hover svg {
+    stroke: #ffffff;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.9rem 0;
+    }
+
+    .nav-container {
+        padding: 0 1.2rem;
+        justify-content: space-between;
+    }
+
+    .nav-logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 1.4rem;
+    }
+
+    .nav-links a span {
+        display: none;
+    }
+
+    .nav-links a svg {
+        width: 26px;
+        height: 26px;
+    }
+}

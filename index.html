@@ -10,11 +10,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@700&display=swap" rel="stylesheet">
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <canvas id="bg"></canvas>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">AK GAMES</a>
+        <ul class="nav-links">
+            <li><a href="#hero"><i data-lucide="home"></i><span>Home</span></a></li>
+            <li><a href="#portfolio"><i data-lucide="gamepad-2"></i><span>Games</span></a></li>
+            <li><a href="#about"><i data-lucide="info"></i><span>About</span></a></li>
+            <li><a href="#contact"><i data-lucide="mail"></i><span>Contact</span></a></li>
+        </ul>
+    </div>
+</nav>
 
 <main>
 
@@ -37,6 +51,10 @@
 </main>
 
 <script src="script.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
 
 </body>
 </html>
