@@ -85,3 +85,16 @@ body{
         0 0 80px rgba(255, 255, 255, 0.2);
     }
 }
+
+.title-container {
+    text-align: center;
+}
+
+.subtitle {
+    font-family: 'Bungee';
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    color: #ffffff;
+    margin-top: -0.5rem;
+    opacity: 0.8;
+}
