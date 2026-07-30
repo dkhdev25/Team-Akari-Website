@@ -1,5 +1,6 @@
 // Team Akari
 // npx vite serve
+// npm run deploy
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
