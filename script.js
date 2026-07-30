@@ -1,6 +1,6 @@
-// Team Akari
 // npx vite serve
 // npm run deploy
+
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
@@ -61,10 +61,7 @@ function render(){
         if (p.y < -20) p.y = canvas.height + 20;
         if (p.y > canvas.height + 20) p.y = -20;
 
-        const screenY = p.y;
-        const screenX = p.x;
-
-        if (screenY < -50 || screenY > canvas.height + 50)
+        if (p.y < -50 || p.y > canvas.height + 50)
             continue;
 
         ctx.beginPath();
@@ -74,7 +71,7 @@ function render(){
         ctx.shadowBlur = 5;
         ctx.shadowColor = "rgba(255,255,255,0.25)";
 
-        ctx.arc(screenX, screenY, p.radius, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
 
         ctx.fill();
     }
@@ -83,3 +80,34 @@ function render(){
 }
 
 render();
+
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+function updateThemeUI(showMoon) {
+    if (!themeToggleBtn) return;
+
+    themeToggleBtn.innerHTML =
+        `<i data-lucide="${showMoon ? "moon" : "sun"}"></i>`;
+
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+}
+
+const isDark = localStorage.getItem("theme") === "dark";
+
+if (isDark) {
+    document.body.classList.add("dark-mode");
+}
+
+updateThemeUI(!isDark);
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark-mode");
+
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+
+        updateThemeUI(!isDark);
+    });
+}
