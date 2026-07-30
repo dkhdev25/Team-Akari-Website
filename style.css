@@ -98,9 +98,11 @@ body{
     text-decoration: none;
 
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
     
     cursor: pointer;
     transition: all 0.3s ease;
