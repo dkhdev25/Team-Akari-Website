@@ -15,11 +15,9 @@
 
     <script>
         const lenis = new Lenis();
+        anchors: true
 
         function raf(time) {
-            lerp: 0.07
-            anchors: true
-
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
