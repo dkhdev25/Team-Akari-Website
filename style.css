@@ -1,3 +1,56 @@
+/* variables */
+:root {
+    --background: linear-gradient(
+        180deg,
+        #0f1722 0%,
+        #243344 100%
+    );
+
+    --text: #ffffff;
+    --nav-background: rgba(8, 13, 20, 0.276);
+    --accent: #fa5c5c;
+    --theme-text: #ffffff;
+    --button-hover-text: #0f1722;
+    --button-background: rgba(255, 255, 255, 0.04);
+
+    --particle-color: 255, 255, 255;
+    --particle-shadow: rgba(255, 255, 255, 0.25);
+
+    --glow-1: rgba(255, 255, 255, 0.7);
+    --glow-2: rgba(255, 255, 255, 0.5);
+    --glow-3: rgba(255, 255, 255, 0.3);
+    --glow-4: rgba(255, 255, 255, 0.1);
+    --glow-5: rgba(255, 255, 255, 0.9);
+    --glow-6: rgba(255, 255, 255, 0.55);
+    --glow-7: rgba(255, 255, 255, 0.25);
+}
+
+body.light-mode {
+    --background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #c9dff2 100%
+    );
+
+    --text: #111111;
+    --nav-background: #dce8f2c5;
+    --accent: #fa5c5c;
+    --theme-text: #0f1720;
+    --button-hover-text: #ffffff;
+    --button-background: rgba(8, 13, 20, 0.04);
+
+    --particle-color: 0, 5, 12;
+    --particle-shadow: rgba(0, 5, 12, 0.901);
+
+    --glow-1: rgba(8, 13, 20, 0.7);
+    --glow-2: rgba(8, 13, 20, 0.5);
+    --glow-3: rgba(8, 13, 20, 0.3);
+    --glow-4: rgba(8, 13, 20, 0.1);
+    --glow-5: rgba(8, 13, 20, 0.9);
+    --glow-6: rgba(8, 13, 20, 0.55);
+    --glow-7: rgba(8, 13, 20, 0.25);
+}
+
 /* background */
 *{
     margin: 0;
@@ -31,16 +84,16 @@
     transform: translateY(100px);
 }
 
+body.light-mode .bg-image {
+    filter: brightness(0);
+}
+
 body{
     overflow-x: hidden;
-    background: linear-gradient(
-        180deg,
-        #0f1722 0%,
-        #243344 100%
-    );
+    background: var(--background);
 
     background-attachment: fixed;
-    color: #ffffff;
+    color: var(--text);
 }
 
 /* layout */
@@ -72,26 +125,24 @@ main{
     font-size: 5.1em;
     font-weight: 700;
     letter-spacing: 0.06em;
-    color: #ffffff;
+    color: var(--theme-text);
     
     animation: vfx-title 5s ease-in-out infinite alternate;
 }
 
 @keyframes vfx-title {
     0% {
-        color: rgba(255, 255, 255, 0.85);
         text-shadow:
-        0 0 4px rgba(255, 255, 255, 0.7),
-        0 0 10px rgba(255, 255, 255, 0.5),
-        0 0 20px rgba(255, 255, 255, 0.3),
-        0 0 40px rgba(255, 255, 255, 0.1);
+        0 0 4px var(--glow-1),
+        0 0 10px var(--glow-2),
+        0 0 20px var(--glow-3),
+        0 0 40px var(--glow-4);
     }
     100% {
-        color: #ffffff;
         text-shadow:
-        0 0 3px rgba(255,255,255,.9),
-        0 0 8px rgba(255,255,255,.55),
-        0 0 16px rgba(255,255,255,.25);
+        0 0 3px var(--glow-5),
+        0 0 8px var(--glow-6),
+        0 0 16px var(--glow-7);
     }
 }
 
@@ -104,7 +155,7 @@ main{
     font-family: 'Bungee', cursive;
     font-size: 1.25em;
     letter-spacing: 0.3em;
-    color: #ffffff;
+    color: var(--theme-text);
     margin-top: -0.8em;
 }
 
@@ -121,23 +172,23 @@ main{
     text-transform: uppercase;
     text-decoration: none;
 
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.04);
+    color: var(--theme-text);
+    background: var(--button-background);
     
-    border: 2px solid rgba(255, 255, 255, 1);
+    border: 2px solid var(--theme-text);
     border-radius: 6px;
     backdrop-filter: blur(3px);
 
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 12px var(--glow-7);
     
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .btn-join:hover {
-    background: #ffffff;
-    color: #0f1722;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    background: var(--theme-text);
+    color: var(--button-hover-text);
+    box-shadow: 0 0 20px var(--glow-2);
 }
 
 /* dark/light mode button */
@@ -150,7 +201,7 @@ main{
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--theme-text);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,7 +226,7 @@ main{
     width: 100%;
     padding: 1.2rem 0;
     z-index: 100;
-    background: rgba(8, 13, 20, 0.276);
+    background: var(--nav-background);
     backdrop-filter: blur(4px);
 }
 
@@ -191,7 +242,7 @@ main{
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.15em;
-    color: #ffffff;
+    color: var(--theme-text);
     text-decoration: none;
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 }
@@ -208,7 +259,7 @@ main{
     align-items: center;
     gap: 0.6rem;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--theme-text);
     font-family: 'Bungee', sans-serif;
     font-size: 1.05rem;
     letter-spacing: 0.05em;
@@ -218,16 +269,16 @@ main{
 .nav-links a svg {
     width: 22px;
     height: 22px;
-    stroke: #ffffff;
+    stroke: var(--theme-text);
     transition: all 0.25s ease;
 }
 
 .nav-links a:hover {
-    color: #fa5c5c;
+    color: var(--accent);
 }
 
 .nav-links a:hover svg {
-    stroke: #fa5c5c;
+    stroke: var(--accent);
     transform: translateY(-2px);
 }
 

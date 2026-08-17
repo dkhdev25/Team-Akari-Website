@@ -16,8 +16,21 @@ function resizeCanvas(){
 
 const particles = [];
 const particleCount = 1000;
-const particleColor = "255, 255, 255";
-const particleShadow = "rgba(255, 255, 255, 0.25)";
+
+let particleColor;
+let particleShadow;
+
+function updateParticleColors() {
+    const styles = getComputedStyle(document.body);
+
+    particleColor = styles
+        .getPropertyValue("--particle-color")
+        .trim();
+
+    particleShadow = styles
+        .getPropertyValue("--particle-shadow")
+        .trim();
+}
 
 for (let i = 0; i < particleCount; i++){
     const depth = Math.random();
@@ -94,20 +107,22 @@ function updateThemeUI(showMoon) {
     }
 }
 
-const isDark = localStorage.getItem("theme") === "dark";
+const isLight = localStorage.getItem("theme") === "light";
 
-if (isDark) {
-    document.body.classList.add("dark-mode");
+if (isLight) {
+    document.body.classList.add("light-mode");
 }
 
-updateThemeUI(!isDark);
+updateParticleColors();
+updateThemeUI(isLight);
 
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
-        const isDark = document.body.classList.toggle("dark-mode");
+        const isLight = document.body.classList.toggle("light-mode");
 
-        localStorage.setItem("theme", isDark ? "dark" : "light");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
 
-        updateThemeUI(!isDark);
+        updateParticleColors();
+        updateThemeUI(isLight);
     });
 }
