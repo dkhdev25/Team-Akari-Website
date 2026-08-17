@@ -84,7 +84,11 @@ function render(){
         ctx.shadowBlur = 5;
         ctx.shadowColor = particleShadow;
 
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        const size = document.body.classList.contains("light-mode")
+            ? p.radius * 1.4
+            : p.radius;
+
+        ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
 
         ctx.fill();
     }

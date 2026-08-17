@@ -28,12 +28,12 @@
 body.light-mode {
     --background: linear-gradient(
         180deg,
-        #ffffff 0%,
-        #c9dff2 100%
+        #d2e1ee 0%,
+        #86a9c7 100%
     );
 
     --text: #111111;
-    --nav-background: #dce8f2c5;
+    --nav-background: #a9c9e6d0;
     --accent: #fa5c5c;
     --theme-text: #0f1720;
     --button-hover-text: #ffffff;
@@ -86,6 +86,7 @@ body.light-mode {
 
 body.light-mode .bg-image {
     filter: brightness(0);
+    opacity: 0.16;
 }
 
 body{
@@ -175,7 +176,7 @@ main{
     color: var(--theme-text);
     background: var(--button-background);
     
-    border: 2px solid var(--theme-text);
+    border: 3px solid var(--theme-text);
     border-radius: 6px;
     backdrop-filter: blur(3px);
 
