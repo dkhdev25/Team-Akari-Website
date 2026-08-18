@@ -15,7 +15,9 @@ function resizeCanvas(){
 }
 
 const particles = [];
-const particleCount = 1000;
+const isPhone = /Android.*Mobile|iPhone|iPod/i.test(navigator.userAgent);
+
+const particleCount = isPhone ? 300 : 1000;
 
 let particleColor;
 let particleShadow;
