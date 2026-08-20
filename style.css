@@ -7,7 +7,7 @@
     );
 
     --text: #ffffff;
-    --nav-background: rgba(8, 13, 20, 0.276);
+    --nav-background: rgba(8, 13, 20, 0.43);
     --accent: #fa5c5c;
     --theme-text: #ffffff;
     --button-hover-text: #0f1722;
@@ -28,12 +28,12 @@
 body.light-mode {
     --background: linear-gradient(
         180deg,
-        #d2e1ee 0%,
-        #86a9c7 100%
+        #ffffff 0%,
+        #a7a7a7 100%
     );
 
     --text: #111111;
-    --nav-background: #a9c9e6d0;
+    --nav-background: #ddddde4b;
     --accent: #fa5c5c;
     --theme-text: #0f1720;
     --button-hover-text: #ffffff;
@@ -42,13 +42,13 @@ body.light-mode {
     --particle-color: 0, 5, 12;
     --particle-shadow: rgba(0, 5, 12, 0.901);
 
-    --glow-1: rgba(8, 13, 20, 0.7);
-    --glow-2: rgba(8, 13, 20, 0.5);
-    --glow-3: rgba(8, 13, 20, 0.3);
-    --glow-4: rgba(8, 13, 20, 0.1);
-    --glow-5: rgba(8, 13, 20, 0.9);
-    --glow-6: rgba(8, 13, 20, 0.55);
-    --glow-7: rgba(8, 13, 20, 0.25);
+    --glow-1: rgba(255, 255, 255, 0.7);
+    --glow-2: rgba(255, 255, 255, 0.5);
+    --glow-3: rgba(255, 255, 255, 0.3);
+    --glow-4: rgba(255, 255, 255, 0.1);
+    --glow-5: rgba(255, 255, 255, 0.9);
+    --glow-6: rgba(255, 255, 255, 0.55);
+    --glow-7: rgba(255, 255, 255, 0.25);
 }
 
 /* background */
